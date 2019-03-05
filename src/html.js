@@ -12,6 +12,7 @@ export default class HTML extends React.Component {
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
           />
+          <base href="/"/>
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800"/>
           <link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.min.css"/>
           <link rel="stylesheet" href="assets/vendor/icon-awesome/css/font-awesome.min.css"/>
@@ -27,12 +28,12 @@ export default class HTML extends React.Component {
           <link rel="stylesheet" href="assets/vendor/animate.css"/>
           <link rel="stylesheet" href="assets/vendor/hs-megamenu/src/hs.megamenu.css"/>
           <link rel="stylesheet" href="assets/vendor/hamburgers/hamburgers.min.css"/>
-    ß
           <link rel="stylesheet" href="assets/css/unify-core.css"/>
           <link rel="stylesheet" href="assets/css/unify-components.css"/>
           <link rel="stylesheet" href="assets/css/unify-globals.css"/>
+          
 
-          <link rel="stylesheet" href="assets/css/custom.css"/>
+        <link rel="stylesheet" href="assets/css/custom.css"/>
           {this.props.headComponents}
         </head>
         <body {...this.props.bodyAttributes}>
