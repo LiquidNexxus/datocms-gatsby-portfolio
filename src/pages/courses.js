@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import { Link,graphql} from 'gatsby';
 import Layout from '../components/shared/layout';
-import SearchHero from '../components/courses/SearchHero';
+import SearchHero from '../components/Courses/SearchHero';
 import SearchResultsContainer from '../components/Courses/SearchResultsContainer';
 
 class Courses extends Component{
