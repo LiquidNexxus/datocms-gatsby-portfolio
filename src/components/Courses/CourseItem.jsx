@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import {Link} from 'gatsby';
 
 
 class CourseItem extends Component{
@@ -9,7 +10,7 @@ class CourseItem extends Component{
         return(
             <article>
               <h3 class="h4 g-mb-15">
-                  <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="#">{course.name}</a>
+                  <Link className="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" to={`course/${course.slug}`}>{course.name}</Link>
                 </h3>
 
               <div class="d-lg-flex justify-content-between align-items-center g-mb-15">
