@@ -1,16 +1,34 @@
 import React from "react";
+import Sessions from "./Sessions";
 
-const Content = ({course}) => {
+const Content = ({ course }) => {
   return (
     <section class="container g-py-100">
       <div class="row g-mb-50">
         <div class="col-md-8 g-mb-30">
           <div class="mb-5">
             <h2 class="g-color-black mb-1">{course.name}</h2>
-            <span class="d-block lead mb-4">Package of the year</span>
-            <p>
-              {course.description}
-            </p>
+            <span class="d-block lead mb-4">Description</span>
+            <p>{course.description}</p>
+
+            <span class="d-block lead mb-4">Who attends</span>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: course.whoAttendsNode.childMarkdownRemark.html
+              }}
+            />
+            <span class="d-block lead mb-4">Objectives</span>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: course.objectivesNode.childMarkdownRemark.html
+              }}
+            />
+            <span class="d-block lead mb-4">Prerequisites</span>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: course.preRequisitesNode.childMarkdownRemark.html
+              }}
+            />
           </div>
 
           <a
@@ -23,38 +41,70 @@ const Content = ({course}) => {
 
         <div class="col-md-4 g-mb-30">
           <div class="mb-5">
-            <h3 class="h5 g-color-black mb-3">Client:</h3>
+            <h3 class="h5 g-color-black mb-3">Category:</h3>
             <a
               class="g-color-gray-dark-v4 g-text-underline--none--hover"
               href="#"
             >
-              <img
-                class="g-width-25 g-height-25 rounded-circle mr-2 mb-1"
-                src="assets/img-temp/100x100/img1.jpg"
-                alt="Image Description"
-              />
-              Htmlstream
+              {course.category}
             </a>
           </div>
           <div class="mb-5">
-            <h3 class="h5 g-color-black mb-3">Designers:</h3>
+            <h3 class="h5 g-color-black mb-3">Level:</h3>
             <ul class="list-unstyled">
               <li class="my-3">
-                <img
+                {/* <img
                   class="g-width-25 g-height-25 rounded-circle mb-1 mr-2"
                   src="assets/img-temp/100x100/img7.jpg"
                   alt="Image Description"
-                />
+                /> */}
                 <a
                   class="g-color-gray-dark-v4 g-text-underline--none--hover"
                   href="#"
                 >
-                  Alex Teseira
+                  {course.level}
                 </a>
               </li>
             </ul>
           </div>
-          <div class="g-mb-30">
+          <div class="mb-5">
+            <h3 class="h5 g-color-black mb-3">Delivery Method:</h3>
+            <ul class="list-unstyled">
+              <li class="my-3">
+                {/* <img
+                  class="g-width-25 g-height-25 rounded-circle mb-1 mr-2"
+                  src="assets/img-temp/100x100/img7.jpg"
+                  alt="Image Description"
+                /> */}
+                <a
+                  class="g-color-gray-dark-v4 g-text-underline--none--hover"
+                  href="#"
+                >
+                  {course.deliveryMethod}
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="mb-5">
+            <h3 class="h5 g-color-black mb-3">Languages Available</h3>
+            <ul class="list-unstyled">
+              <li class="my-3">
+                {/* <img
+                  class="g-width-25 g-height-25 rounded-circle mb-1 mr-2"
+                  src="assets/img-temp/100x100/img7.jpg"
+                  alt="Image Description"
+                /> */}
+                <a
+                  class="g-color-gray-dark-v4 g-text-underline--none--hover"
+                  href="#"
+                >
+                  {course.languagesAvailable}
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* <div class="g-mb-30">
             <h3 class="h5 g-color-black mb-3">Tags:</h3>
             <ul class="u-list-inline mb-0">
               <li class="list-inline-item g-mb-10">
@@ -105,7 +155,19 @@ const Content = ({course}) => {
                 </a>
               </li>
             </ul>
+          </div> */}
+        </div>
+      </div>
+
+      <div className="row g-mb-50">
+        <div className="col-md-12">
+          <div class="text-center g-mb-50">
+            <h2 class="h4">
+              Sessions
+              <span class="g-color-primary g-ml-5">#01</span>
+            </h2>
           </div>
+          <Sessions agendas={course.agenda} />
         </div>
       </div>
 

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {Link} from 'gatsby';
 
 class Header extends Component {
   render() {
@@ -22,7 +23,7 @@ class Header extends Component {
                   </span>
                 </span>
               </button>
-              <a href="/" class="navbar-brand d-flex">
+              <Link className="navbar-brand d-flex" to="/">
                 <svg
                   width="86px"
                   height="32px"
@@ -54,21 +55,17 @@ class Header extends Component {
                     </g>
                   </g>
                 </svg>
-              </a>
+                </Link>
               <div
                 class="collapse navbar-collapse align-items-center flex-sm-row g-pt-10 g-pt-5--lg g-mr-40--lg"
                 id="navBar"
               >
                 <ul class="navbar-nav text-uppercase g-pos-rel g-font-weight-600 ml-auto">
                   <li class="nav-item  g-mx-10--lg g-mx-15--xl">
-                    <a href="/" class="nav-link g-py-7 g-px-0">
-                      Home
-                    </a>
+                  <Link className="nav-link g-py-7 g-px-0" to="/">Home</Link>
                   </li>
                   <li class="nav-item  g-mx-10--lg g-mx-15--xl">
-                    <a href="/courses" class="nav-link g-py-7 g-px-0">
-                      Courses
-                    </a>
+                  <Link className="nav-link g-py-7 g-px-0" to="courses">Courses</Link>
                   </li>
                 </ul>
               </div>

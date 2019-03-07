@@ -15,7 +15,37 @@ export const query = graphql`
   query CourseQuery($slug: String!) {
     datoCmsCourse(slug: { eq: $slug }) {
       name,
-      description
+      description,
+      category,
+      level,
+      deliveryMethod,
+      languagesAvailable,
+      whoAttendsNode{
+        childMarkdownRemark {
+         html
+       }
+     },
+     preRequisitesNode{
+      childMarkdownRemark {
+       html
+        }
+      }
+      ,objectivesNode{
+          childMarkdownRemark {
+          html
+        }
+      },
+      agenda{
+        name,
+        sessionStartTimeC,
+        sessionEndTimeC,
+        sessionAbstractCNode{
+          childMarkdownRemark {
+          html
+          }
+        }
+        
+      }
     }
   }
 `

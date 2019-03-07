@@ -70,11 +70,13 @@ export default class HTML extends React.Component {
             __html: `
                     $(document).on('ready', function () {
                       // initialization of go to
+                      console.log("initalized")
                       $.HSCore.components.HSGoTo.init('.js-go-to')
                   
                       // initialization of tabs
                       $.HSCore.components.HSTabs.init('[role="tablist"]');
                     });
+
                   
                     $(window).on('load', function () {
                       // initialization of header
@@ -97,6 +99,10 @@ export default class HTML extends React.Component {
                         $.HSCore.components.HSTabs.init('[role="tablist"]');
                       }, 200);
                     });
+
+                    window.onbeforeunload = function(e) {
+                      console.log("changed")
+                    };
                 `,
           }}
         />

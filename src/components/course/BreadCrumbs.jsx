@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import course from "../../templates/course";
 
 const BreadCrumbs = props => {
   return (
@@ -17,7 +18,7 @@ const BreadCrumbs = props => {
               <li class="list-inline-item g-mr-5">
                 <a
                   class="u-link-v5 g-color-main g-color-primary--hover"
-                  href="#"
+                  href="/"
                 >
                   Home
                 </a>
@@ -26,14 +27,14 @@ const BreadCrumbs = props => {
               <li class="list-inline-item g-mr-5">
                 <a
                   class="u-link-v5 g-color-main g-color-primary--hover"
-                  href="#"
+                  href="/courses"
                 >
-                  Pages
+                  Courses
                 </a>
                 <i class="g-color-gray-light-v2 g-ml-5">/</i>
               </li>
               <li class="list-inline-item g-color-primary">
-                <span>Portfolio Single Item 9</span>
+                <span>{props.title}</span>
               </li>
             </ul>
           </div>
